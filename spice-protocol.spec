@@ -4,12 +4,14 @@
 #
 Name     : spice-protocol
 Version  : 0.12.10
-Release  : 1
+Release  : 2
 URL      : http://www.spice-space.org/download/releases/spice-protocol-0.12.10.tar.bz2
 Source0  : http://www.spice-space.org/download/releases/spice-protocol-0.12.10.tar.bz2
 Summary  : SPICE protocol headers
 Group    : Development/Tools
 License  : BSD-3-Clause
+BuildRequires : pyparsing
+BuildRequires : six
 
 %description
 
