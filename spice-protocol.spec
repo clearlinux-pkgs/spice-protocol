@@ -4,7 +4,7 @@
 #
 Name     : spice-protocol
 Version  : 0.12.11
-Release  : 4
+Release  : 5
 URL      : http://www.spice-space.org/download/releases/spice-protocol-0.12.11.tar.bz2
 Source0  : http://www.spice-space.org/download/releases/spice-protocol-0.12.11.tar.bz2
 Summary  : SPICE protocol headers
