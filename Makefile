@@ -1,5 +1,5 @@
 PKG_NAME := spice-protocol
-URL = https://gitlab.freedesktop.org/spice/spice-protocol/uploads/f18acfa4a10482062b3f3484bddeb9fa/spice-protocol-0.14.0.tar.bz2
+URL = https://gitlab.freedesktop.org/spice/spice-protocol/uploads/a6996e70f63cbfa0327b44d23003b87e/spice-protocol-0.14.1.tar.bz2
 ARCHIVES = 
 
 include ../common/Makefile.common
