@@ -4,13 +4,12 @@
 #
 Name     : spice-protocol
 Version  : 0.14.3
-Release  : 15
+Release  : 16
 URL      : https://gitlab.freedesktop.org/spice/spice-protocol/uploads/3422c1fac2edc33e61525c8f55a11097/spice-protocol-0.14.3.tar.xz
 Source0  : https://gitlab.freedesktop.org/spice/spice-protocol/uploads/3422c1fac2edc33e61525c8f55a11097/spice-protocol-0.14.3.tar.xz
 Summary  : Spice protocol header files
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: spice-protocol-data = %{version}-%{release}
 Requires: spice-protocol-license = %{version}-%{release}
 BuildRequires : buildreq-meson
 BuildRequires : pyparsing
@@ -27,18 +26,9 @@ The protocol definition for [SPICE] project used by:
 * [xf86-video-qxl], [gpu/drm/qxl], [win32/qxl], [win32/qxl-wddm-dod]: Guest video
 drivers;
 
-%package data
-Summary: data components for the spice-protocol package.
-Group: Data
-
-%description data
-data components for the spice-protocol package.
-
-
 %package dev
 Summary: dev components for the spice-protocol package.
 Group: Development
-Requires: spice-protocol-data = %{version}-%{release}
 Provides: spice-protocol-devel = %{version}-%{release}
 Requires: spice-protocol = %{version}-%{release}
 
@@ -63,7 +53,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1601664666
+export SOURCE_DATE_EPOCH=1601833447
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -76,13 +66,13 @@ ninja -v -C builddir
 mkdir -p %{buildroot}/usr/share/package-licenses/spice-protocol
 cp %{_builddir}/spice-protocol-0.14.3/COPYING %{buildroot}/usr/share/package-licenses/spice-protocol/7e915fa295db356dc2f82929681d82ac4f7f961d
 DESTDIR=%{buildroot} ninja -C builddir install
+## install_append content
+mkdir -pv %{buildroot}/usr/lib64/pkgconfig
+mv -v %{buildroot}/usr/{share,lib64}/pkgconfig/spice-protocol.pc
+## install_append end
 
 %files
 %defattr(-,root,root,-)
-
-%files data
-%defattr(-,root,root,-)
-/usr/share/pkgconfig/spice-protocol.pc
 
 %files dev
 %defattr(-,root,root,-)
@@ -99,6 +89,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/spice-1/spice/stream-device.h
 /usr/include/spice-1/spice/types.h
 /usr/include/spice-1/spice/vd_agent.h
+/usr/lib64/pkgconfig/spice-protocol.pc
 
 %files license
 %defattr(0644,root,root,0755)

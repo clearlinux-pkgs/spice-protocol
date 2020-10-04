@@ -1,0 +1,2 @@
+mkdir -pv %{buildroot}/usr/lib64/pkgconfig
+mv -v %{buildroot}/usr/{share,lib64}/pkgconfig/spice-protocol.pc
