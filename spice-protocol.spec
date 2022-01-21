@@ -4,7 +4,7 @@
 #
 Name     : spice-protocol
 Version  : 0.14.3
-Release  : 16
+Release  : 17
 URL      : https://gitlab.freedesktop.org/spice/spice-protocol/uploads/3422c1fac2edc33e61525c8f55a11097/spice-protocol-0.14.3.tar.xz
 Source0  : https://gitlab.freedesktop.org/spice/spice-protocol/uploads/3422c1fac2edc33e61525c8f55a11097/spice-protocol-0.14.3.tar.xz
 Summary  : Spice protocol header files
@@ -12,8 +12,8 @@ Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: spice-protocol-license = %{version}-%{release}
 BuildRequires : buildreq-meson
-BuildRequires : pyparsing
-BuildRequires : six
+BuildRequires : pypi(pyparsing)
+BuildRequires : pypi(six)
 
 %description
 spice-protocol
@@ -53,7 +53,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1601833447
+export SOURCE_DATE_EPOCH=1642784406
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
